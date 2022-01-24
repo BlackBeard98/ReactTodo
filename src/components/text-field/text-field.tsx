@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { TextField } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
@@ -14,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type textFieldProps = {
-  setValue: (e: any) => void;
+  setValue: (e: string) => void;
 };
 
 export const TextFields: React.FC<textFieldProps> = (props) => {
@@ -23,7 +22,6 @@ export const TextFields: React.FC<textFieldProps> = (props) => {
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <TextField
-        id="standard-basic"
         label="Add new Task"
         onChange={(e) => props.setValue(e.target.value)}
       />
